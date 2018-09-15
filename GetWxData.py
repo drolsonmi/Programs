@@ -122,6 +122,19 @@ if data_type == 3:
                    outfile.write("wget https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/09/{0:04d}{1:03d}{2:02d}{3:02d}_GOES16-ABI-CONUS-09-1250x750.jpg\n".format(year,jday,hr,(minute*5)+2))
 
 
+##### CONUS Atlantic Satellite (GOES 16) #####
+if data_type == 4:
+    for jday in range(jday0,jdayf):
+        for hr in range(24):
+            for minute in range(12):
+                if satellite == 1:
+                   outfile.write("wget https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/13/{0:04d}{1:03d}{2:02d}{3:02d}_GOES16-ABI-taw-13-1250x750.jpg\n".format(year,jday,hr,(minute*5)+2))
+                if satellite == 2:
+                   outfile.write("wget https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/GEOCOLOR/{0:04d}{1:03d}{2:02d}{3:02d}_GOES16-ABI-taw-GEOCOLOR-1250x750.jpg\n".format(year,jday,hr,(minute*5)+2))
+                if satellite == 3:
+                   outfile.write("wget https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/taw/09/{0:04d}{1:03d}{2:02d}{3:02d}_GOES16-ABI-taw-09-1250x750.jpg\n".format(year,jday,hr,(minute*5)+2))
+
+
 ##### SATELLITE IMAGES #####
 if data_type > 5:
     for jday in range(jday0,jdayf):
