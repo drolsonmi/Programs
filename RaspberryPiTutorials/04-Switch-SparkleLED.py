@@ -41,11 +41,6 @@ while True:
         NumOfLoops = random.randint(5,45)
         for x in range (1,NumOfLoops):
             GPIO.output(Pins[current_pin],GPIO.LOW)
-            if current_pin == len(Pins)-1:
-                print("Resetting counter")
-                current_pin = 0
-            else:
-                current_pin = current_pin + 1
-            print(current_pin," of ",len(Pins)-1)
+            current_pin = random.randint(0,7)
             GPIO.output(Pins[current_pin],GPIO.HIGH)
             time.sleep(0.15)
